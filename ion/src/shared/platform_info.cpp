@@ -96,7 +96,7 @@ private:
   constexpr static uint32_t Magic = 0xDEC00DF0;
   constexpr static uint32_t OmegaMagic = 0xEFBEADDE;
   constexpr static uint32_t UpsilonMagic = 0x55707369;
-  constexpr static uint32_t OSType = 0x55707369;
+  constexpr static uint32_t OSType = 0x79827178;
   uint32_t m_header;
   const char m_version[8];
   const char m_patchLevel[8];
