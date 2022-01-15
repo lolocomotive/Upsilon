@@ -4,7 +4,7 @@
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="cc by-nc-sa 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-525252.svg?labelColor=292929&logo=creative%20commons&style=for-the-badge" /></a>
   <a href="https://github.com/Lauryy06/Upsilon/issues"><img alt="Issues" src="https://img.shields.io/github/issues/Lauryy06/Upsilon.svg?labelColor=292929&logo=git&style=for-the-badge" /></a>
   <br/>
-  <a href="https://discord.gg/Q9buEMduXG"><img alt="Discord" src="https://img.shields.io/discord/663420259851567114?color=blue&labelColor=292929&label=chat%20-%20discord&logo=discord&style=for-the-badge" /></a>
+  <a href="https://discord.gg/hnEqPzAJzn"><img alt="Discord" src="https://img.shields.io/discord/663420259851567114?color=blue&labelColor=292929&label=chat%20-%20discord&logo=discord&style=for-the-badge" /></a>
 </p>
 
 > Vous ne comprenez pas l'anglais ? Vous êtes francophone ? Regardez le [*LISEZ-MOI* français](./README.fr.md) !
@@ -29,9 +29,15 @@ Upsilon is a fork of Omega, an user-made OS that runs on the Numworks calculator
 
 ## Installation
 
+### Installer
+
+Go to the [Upsilon website](https://lolocomotive.github.io/Upsilon-website) to the "Install" section. 
+If your calculator is recognized, contains a version of Epsilon lower than 16 and your browser accepts WebUSB, the page will suggest you to install Upsilon.
+Do not disconnect your calculator until the installation is complete.
+
 ### Manual
 
-*As of today, only the manual installation is available. You can refer to this [website](https://www.numworks.com/resources/engineering/software/build/) for the first step if you get errors.*
+ *You can refer to this [website](https://www.numworks.com/resources/engineering/software/build/) for the first step if you get errors.*
 
 
 

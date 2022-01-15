@@ -4,6 +4,7 @@
 #include "app.h"
 #include <escher/metric.h>
 #include <ion.h>
+#include "../global_preferences.h"
 
 using namespace Shared;
 
@@ -63,7 +64,11 @@ void EditorController::didBecomeFirstResponder() {
 void EditorController::viewWillAppear() {
   ViewController::viewWillAppear();
   m_editorView.loadSyntaxHighlighter();
-  m_editorView.setCursorLocation(m_editorView.text() + strlen(m_editorView.text()));
+  if(GlobalPreferences::sharedGlobalPreferences()->cursorSaving()) {
+    m_editorView.setCursorLocation(m_script.content() + *m_script.CursorPosition());
+  } else {
+    m_editorView.setCursorLocation(m_editorView.text() + strlen(m_editorView.text()));
+  }
 }
 
 void EditorController::viewDidDisappear() {
@@ -72,6 +77,7 @@ void EditorController::viewDidDisappear() {
 }
 
 bool EditorController::textAreaDidReceiveEvent(TextArea * textArea, Ion::Events::Event event) {
+  m_script.setCursorPosition(textArea->cursorLocation() - m_script.content());
   if (App::app()->textInputDidReceiveEvent(textArea, event)) {
     return true;
   }
@@ -157,7 +163,7 @@ void EditorController::cleanStorageEmptySpace() {
   Ion::Storage::Record::Data scriptValue = m_script.value();
   Ion::Storage::sharedStorage()->getAvailableSpaceFromEndOfRecord(
       m_script,
-      scriptValue.size - Script::StatusSize() - (strlen(m_script.content()) + 1)); // TODO optimize number of script fetches
+      scriptValue.size - Script::StatusSize() - Script::CursorPositionSize() - (strlen(m_script.content()) + 1)); // TODO optimize number of script fetches
 }
 
 
