@@ -122,6 +122,7 @@ jobs:
         with:
           path: 'output/release/device/n0110/binpack/'
           destination: 'upsilon-binfiles.appspot.com/dev/n110/'
+          parent: false
       - uses: actions/upload-artifact@master
         with:
           name: epsilon-binpack-n0110.tgz
