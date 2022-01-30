@@ -113,6 +113,7 @@ jobs:
       - run: make -j2 bench.flash.dfu
       - run: make -j2 binpack
       - run: cp output/release/device/n0110/binpack-n0110-`git rev-parse HEAD | head -c 7`.tgz output/release/device/n0110/binpack-n0110.tgz
+      - run: find output/
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
