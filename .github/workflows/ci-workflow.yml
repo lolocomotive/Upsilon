@@ -170,7 +170,7 @@ jobs:
       - run: make -j2 epsilon.onboarding.beta.B.dfu
       - run: make -j2 binpack
       - run: make -j2 MODEL=n0110 bootloader
-      - run: cp output/release/device/n0110/bootloader.bin output/release/device/binpack/
+      - run: cp output/release/device/n0110/bootloader.bin output/release/device/bootloader/binpack/
       - run: cp output/release/device/bootloader/binpack-bootloader-`git rev-parse HEAD | head -c 7`.tgz output/release/device/bootloader/binpack-bootloader.tgz
       - id: 'auth'
         if: ${{ github.event_name == 'push' && github.ref_name == 'upsilon-dev' && github.repository == 'UpsilonNumworks/Upsilon' }}
