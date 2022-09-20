@@ -50,10 +50,7 @@ jobs:
           submodules: 'recursive'
       - run: wget https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
       - run: unzip android-ndk-r25b-linux.zip
-      - run: sudo mkdir /usr/local/android/
-      - run: sudo mkdir /usr/local/android/ndk-bundle/
-      - run: sudo mv android-ndk-r25b/* /usr/local/android/ndk-bundle/
-      - run: make -j2 PLATFORM=simulator TARGET=android
+      - run: make -j2 PLATFORM=simulator TARGET=android NDK_PATH=./android-ndk-r25b-linux/
       - id: 'auth'
         if: ${{ github.event_name == 'push' && github.ref_name == 'upsilon-dev' && github.repository == 'UpsilonNumworks/Upsilon' }}
         uses: 'google-github-actions/auth@v0'
