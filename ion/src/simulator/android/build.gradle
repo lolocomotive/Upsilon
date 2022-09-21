@@ -55,7 +55,7 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt')
       if (projectVariable('SIGNING_STORE_FILE')) {
         signingConfig signingConfigs.environment
-      }else{
+      } else {
         signingConfig signingConfigs.debug
       }
     }
