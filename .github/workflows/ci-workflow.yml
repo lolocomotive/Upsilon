@@ -29,7 +29,8 @@ jobs:
           submodules: 'recursive'
       - run: make PLATFORM=simulator TARGET=web ./output/release/simulator/web/apps/i18n.cpp
       - run: make -j2 PLATFORM=simulator TARGET=web EPSILON_APPS=code
-      - run: npx -y uglify-js output/release/simulator/web/epsilon.js -o epsilon.python.min.js -cm 
+      - run: npm install uglify-js -g
+      - run: uglifyjs ./output/release/simulator/web/epsilon.js -o epsilon.python.min.js -cm 
       - id: 'auth'
         #if: ${{ github.event_name == 'push' && github.ref_name == 'upsilon-dev' && github.repository == 'UpsilonNumworks/Upsilon' }}
         uses: 'google-github-actions/auth@v0'
