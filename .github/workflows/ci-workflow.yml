@@ -27,6 +27,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
+      - run: make PLATFORM=simulator TARGET=web ./output/release/simulator/web/apps/i18n.cpp
       - run: make -j2 PLATFORM=simulator TARGET=web EPSILON_APPS=code
       - uses: actions/upload-artifact@master
         with:
