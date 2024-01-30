@@ -221,11 +221,11 @@ State scan() {
     if (menuHeldFor > 30) {
       Simulator::FXCGMenuHandler::openMenu();
       dupdate();
-      // Wait until EXE is released
+      // Wait until EXE and MENU are released
       do {
         sleep_ms(10);
         clearevents();
-      } while (keydown(KEY_EXE));
+      } while (keydown(KEY_EXE) || keydown(KEY_MENU));
     }
   } else {
     menuHeldFor = 0;
